@@ -8,9 +8,6 @@ import './styles/NavbarApp.css';
 const NavbarApp = () => {
 
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
-  
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   let loggedInUser;
   useEffect(() => {
@@ -20,10 +17,11 @@ const NavbarApp = () => {
       setUserIsLoggedIn(true);
     }
   });
-  console.log(userIsLoggedIn);
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  // const userIsLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const userName = useSelector((state) => state.auth.loginEmail);
+  let userEmail = JSON.parse(localStorage.getItem('user'));
 
   const LogoutHandler = () => {
     dispatch(authActions.logout());
@@ -47,7 +45,7 @@ const NavbarApp = () => {
                   <NavLink to="/postblog" className='nav-item'>Post Blog</NavLink>
                 </Nav>
                 <Nav className="d-flex justify-content-evenly w-25 nav-item">
-                  <h6 className="username">{userName}</h6>
+                  <h6 className="username">{userEmail.email}</h6>
                   <Button variant="danger" onClick={LogoutHandler}>
                     Logout
                   </Button>

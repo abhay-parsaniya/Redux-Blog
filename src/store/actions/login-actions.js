@@ -1,6 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { authActions } from "../slice/auth-slice";
-import { useNavigate } from "react-router-dom";
 
 export const sendLoginData = (logindata, navigate) => {
   return async (dispatch) => {
@@ -12,7 +11,7 @@ export const sendLoginData = (logindata, navigate) => {
         logindata.email,
         logindata.password
       );
-      console.log(response);
+      // console.log(response);
 
       dispatch(authActions.login(logindata.email));
       localStorage.setItem("user", JSON.stringify(logindata));

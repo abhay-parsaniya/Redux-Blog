@@ -9,7 +9,8 @@ const YourBlogs = () => {
   const dispatch = useDispatch();
 
   const blogData = useSelector((state) => state.blog.blogs);
-  const userEmail = useSelector((state) => state.auth.loginEmail);
+
+  let userEmail = JSON.parse(localStorage.getItem('user'));
 
   let allBlogs = [];
   let userBlogs = [];
@@ -20,7 +21,7 @@ const YourBlogs = () => {
 
   userBlogs = allBlogs.filter((blog) => {
     return (
-      blog.email === userEmail
+      blog.email === userEmail.email
     )
   })
 
