@@ -1,0 +1,23 @@
+.main-container{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container{
+    background-color: rgb(237, 226, 226);
+    border: 3px solid gray;
+    border-radius: 10px;
+    min-height: 50vh;
+    width: 50%;
+    padding: 50px;
+}
+
+.form{
+    margin: 20px 0px;
+}
+
+.login-form-container h2{
+    text-align: center;
+}

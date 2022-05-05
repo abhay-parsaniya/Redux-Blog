@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Login, Register, NavbarApp, Blogs, YourBlogs, PostBlog } from "./components/filestore";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { app } from "./firebase";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const Routing = () => {
+
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/yourblogs" element={<YourBlogs />} />
+        <Route path="/postblog" element={<PostBlog />} />
+      </Routes>
+    </>
+  );
+};
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <NavbarApp />
+        <Routing />
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,0 +1,27 @@
+.main-blog-container{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-form-container{
+    background-color: rgb(237, 226, 226);
+    border: 3px solid gray;
+    border-radius: 10px;
+    min-height: 50vh;
+    width: 75%;
+    padding: 50px;
+}
+
+.form{
+    margin: 20px 0px;
+}
+
+.blog-form-container h2{
+    text-align: center;
+}
+
+.error-text {
+    color: #b40e0e;
+}
